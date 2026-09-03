@@ -1,0 +1,234 @@
+.inner-page {
+  width: 100%;
+}
+
+.page-hero {
+  width: min(calc(100% - 40px), var(--max));
+  margin: 50px auto 70px;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero.compact {
+  padding-bottom: 54px;
+}
+
+.page-hero h1,
+.article-header h1 {
+  margin: 12px 0 24px;
+  max-width: 980px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: 1.02;
+}
+
+.lead {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.flush-top {
+  padding-top: 0;
+}
+
+.condition-card h2,
+.article-list h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.content-grid {
+  width: min(calc(100% - 40px), var(--max));
+  margin: 0 auto 90px;
+  display: grid;
+  grid-template-columns: 1.45fr .75fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.prose-card,
+.note-card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 38px;
+  background: var(--surface);
+}
+
+.prose-card h2,
+.note-card h2,
+.article-body h2 {
+  margin-top: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.note-card {
+  background: var(--soft);
+}
+
+.note-card p,
+.prose-card p {
+  color: var(--muted);
+}
+
+.detailed div {
+  align-items: start;
+}
+
+.topic-list {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-list li {
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+}
+
+.topic-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.medical-disclaimer {
+  margin-top: 30px;
+  padding: 22px;
+  border-left: 3px solid var(--accent);
+  background: var(--soft);
+}
+
+.medical-disclaimer p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.inline-button {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.booking-link {
+  display: inline-block;
+  border: 1px solid #8ba197;
+  border-radius: 999px;
+  padding: 13px 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.booking-flow {
+  width: min(calc(100% - 40px), var(--max));
+  margin: 0 auto 40px;
+  border-top: 1px solid var(--line);
+}
+
+.booking-step {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.booking-step > span {
+  font-family: Georgia, serif;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.booking-step strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.booking-step p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.wide-note {
+  width: min(calc(100% - 40px), var(--max));
+  margin: 50px auto 90px;
+}
+
+.wide-note button {
+  margin-top: 12px;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.article-page {
+  width: min(calc(100% - 40px), 900px);
+  margin: 55px auto 100px;
+}
+
+.article-header {
+  padding: 65px 0 45px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.article-body {
+  max-width: 720px;
+  padding: 45px 0;
+  font-size: 1.05rem;
+}
+
+.article-body p {
+  color: #48534f;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-hero,
+  .content-grid,
+  .booking-flow,
+  .wide-note,
+  .article-page {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  .page-hero {
+    margin-top: 20px;
+    padding: 50px 0 40px;
+  }
+
+  .prose-card,
+  .note-card {
+    padding: 26px 22px;
+  }
+
+  .booking-step {
+    grid-template-columns: 48px 1fr;
+  }
+}
