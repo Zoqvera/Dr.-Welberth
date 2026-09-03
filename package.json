@@ -8,7 +8,8 @@
     "prebuild": "node scripts/prepare-open-graph.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "^15.5.2",
