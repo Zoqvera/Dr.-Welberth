@@ -151,6 +151,33 @@
   left: 28px;
 }
 
+.doctor-portrait-frame {
+  position: relative;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.ai-image-label {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 8px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(12, 43, 37, 0.84);
+  color: rgba(255, 254, 250, 0.96);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .hero-copy > *,
 .hero-panel {
   animation: refined-rise 720ms cubic-bezier(.2,.8,.2,1) both;
@@ -208,6 +235,12 @@
   .article-page-cover {
     margin-top: 26px;
     border-radius: 22px;
+  }
+
+  .ai-image-label {
+    padding: 7px 10px;
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
   }
 }
 
