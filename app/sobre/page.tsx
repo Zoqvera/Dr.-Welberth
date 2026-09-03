@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { doctorProfile } from "../site-config";
 
 export const metadata: Metadata = {
   title: "Sobre",
@@ -20,18 +21,12 @@ export default function SobrePage() {
         <article className="prose-card">
           <h2>Formação</h2>
           <div className="timeline detailed">
-            <div>
-              <strong>Universidade Estadual de Montes Claros — Unimontes</strong>
-              <span>Graduação em Medicina</span>
-            </div>
-            <div>
-              <strong>Hospital de Clínicas da Universidade Federal de Uberlândia — HC-UFU</strong>
-              <span>Residência Médica em Clínica Médica</span>
-            </div>
-            <div>
-              <strong>Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto — USP</strong>
-              <span>Formação em Reumatologia</span>
-            </div>
+            {doctorProfile.training.map((training) => (
+              <div key={training.shortInstitution}>
+                <strong>{training.institution}</strong>
+                <span>{training.program}</span>
+              </div>
+            ))}
           </div>
         </article>
 
