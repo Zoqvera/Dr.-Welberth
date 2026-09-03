@@ -1,4 +1,6 @@
-const iconPaths: Record<string, React.ReactNode> = {
+import type { ReactNode } from "react";
+
+const iconPaths: Record<string, ReactNode> = {
   "artrite-reumatoide": (
     <>
       <circle cx="22" cy="22" r="5" />
