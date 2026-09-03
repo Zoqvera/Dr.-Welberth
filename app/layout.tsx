@@ -1,48 +1,45 @@
 import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
+import { siteConfig } from "./site-config";
 import "./globals.css";
 import "./pages.css";
 import "./refinements.css";
 import "./mobile.css";
 
-const siteUrl = "https://zoqvera.github.io/Dr.-Welberth/";
-const siteTitle = "Dr. Welberth Fernandes de Souza";
-const siteDescription =
-  "Informação médica em reumatologia, doenças reumáticas e orientações para agendamento de consulta.";
-const openGraphImageUrl = `${siteUrl}open_graph_welberth.jpg`;
+const openGraphImageUrl = `${siteConfig.url}${siteConfig.openGraphImage}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteTitle,
-    template: `%s | ${siteTitle}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.title}`,
   },
-  description: siteDescription,
+  description: siteConfig.description,
   alternates: {
-    canonical: siteUrl,
+    canonical: siteConfig.url,
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: siteUrl,
-    siteName: siteTitle,
-    title: siteTitle,
-    description: siteDescription,
+    url: siteConfig.url,
+    siteName: siteConfig.title,
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: [
       {
         url: openGraphImageUrl,
         width: 1200,
         height: 630,
-        alt: siteTitle,
+        alt: siteConfig.title,
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteTitle,
-    description: siteDescription,
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: [openGraphImageUrl],
   },
 };
