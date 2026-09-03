@@ -2,6 +2,7 @@ export type MedicalTraining = {
   shortInstitution: string;
   institution: string;
   program: string;
+  summaryLabel: string;
   heroLabel: string;
 };
 
@@ -24,18 +25,21 @@ export const doctorProfile = {
       shortInstitution: "Unimontes",
       institution: "Universidade Estadual de Montes Claros — Unimontes",
       program: "Graduação em Medicina",
+      summaryLabel: "Graduação em Medicina",
       heroLabel: "Medicina — Unimontes",
     },
     {
       shortInstitution: "HC-UFU",
       institution: "Hospital de Clínicas da Universidade Federal de Uberlândia — HC-UFU",
       program: "Residência Médica em Clínica Médica",
+      summaryLabel: "Residência em Clínica Médica",
       heroLabel: "Clínica Médica — HC-UFU",
     },
     {
       shortInstitution: "HC-FMRP-USP",
       institution: "Hospital das Clínicas da Faculdade de Medicina de Ribeirão Preto — USP",
       program: "Formação em Reumatologia",
+      summaryLabel: "Formação em Reumatologia",
       heroLabel: "Formação em Reumatologia — HC-FMRP-USP",
     },
   ] satisfies MedicalTraining[],
