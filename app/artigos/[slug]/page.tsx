@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArticleCover } from "../../components/article-cover";
 import { articles, getArticle, getCondition } from "../../content";
 
 export function generateStaticParams() {
@@ -38,6 +39,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <span>Conteúdo educativo</span>
             <span>Revisão médica pendente para publicação</span>
           </div>
+        </div>
+
+        <div className="article-page-cover">
+          <ArticleCover category={article.category} slug={article.slug} />
         </div>
 
         <div className="article-body">
