@@ -17,8 +17,8 @@ export default function Home() {
             <Link className="button secondary" href="/doencas">Conhecer condições</Link>
           </div>
           <p className="credential-note">
-            As credenciais profissionais e o enquadramento da especialidade serão publicados após
-            validação documental para manter a comunicação médica precisa.
+            <strong>MÉDICO — CRM-SP 270090.</strong> A apresentação de especialidade e RQE será incluída
+            somente após validação documental, para manter a comunicação profissional precisa.
           </p>
         </div>
         <div className="hero-panel" aria-label="Apresentação do médico">
@@ -30,6 +30,7 @@ export default function Home() {
           <div>
             <p className="panel-kicker">Trajetória médica</p>
             <h2>Welberth Fernandes de Souza</h2>
+            <p>MÉDICO — CRM-SP 270090</p>
             <p>Medicina — Unimontes</p>
             <p>Clínica Médica — HC-UFU</p>
             <p>Formação em Reumatologia — HC-FMRP-USP</p>
