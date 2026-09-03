@@ -1,0 +1,197 @@
+.condition-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.condition-icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(36, 85, 72, 0.13);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 254, 250, 0.95), rgba(223, 232, 225, 0.75));
+  color: var(--accent);
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), background-color 260ms ease;
+}
+
+.condition-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.condition-card > span,
+.condition-card-top > span:not(.condition-icon) {
+  color: var(--warm);
+}
+
+.article-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  border: 1px solid rgba(24, 38, 34, 0.12) !important;
+  border-radius: 24px;
+  background: rgba(255, 254, 250, 0.76);
+  box-shadow: 0 12px 34px rgba(27, 46, 40, 0.05);
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.article-card-copy {
+  padding: 25px 25px 28px;
+}
+
+.article-card-copy > span {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.article-cover {
+  position: relative;
+  height: 178px;
+  overflow: hidden;
+  background: var(--accent-dark);
+  isolation: isolate;
+}
+
+.article-cover svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.article-cover-shape {
+  fill: rgba(255, 255, 255, 0.08);
+}
+
+.article-cover-line {
+  fill: none;
+  stroke: rgba(255, 254, 250, 0.48);
+  stroke-width: 1.6;
+}
+
+.article-cover-line.thin {
+  stroke-width: .65;
+  opacity: .7;
+}
+
+.article-cover-label {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  max-width: calc(100% - 82px);
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(9, 42, 35, 0.24);
+  color: rgba(255, 254, 250, 0.9);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.article-cover-mark {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 14px;
+  color: rgba(255, 255, 255, 0.16);
+  font-family: var(--serif);
+  font-size: 3.1rem;
+  line-height: 1;
+  letter-spacing: -.08em;
+}
+
+.article-cover-1 {
+  background: linear-gradient(145deg, #123b32, #245548 58%, #769387);
+}
+
+.article-cover-2 {
+  background: linear-gradient(145deg, #263e38, #6d8177 58%, #a98262);
+}
+
+.article-cover-3 {
+  background: linear-gradient(145deg, #18352f, #536f65 52%, #b0b8a8);
+}
+
+.article-cover-2 .shape-a {
+  transform: translate(70px, 22px) scale(1.55);
+}
+
+.article-cover-3 .shape-b {
+  transform: translate(-76px, -34px) scale(.75);
+}
+
+.hero-copy > *,
+.hero-panel {
+  animation: refined-rise 720ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-copy > :nth-child(2) { animation-delay: 70ms; }
+.hero-copy > :nth-child(3) { animation-delay: 130ms; }
+.hero-copy > :nth-child(4) { animation-delay: 190ms; }
+.hero-copy > :nth-child(5) { animation-delay: 250ms; }
+.hero-panel { animation-delay: 140ms; }
+
+@keyframes refined-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) {
+  .condition-card:hover .condition-icon {
+    transform: translateY(-3px) rotate(-2deg) scale(1.035);
+    background: rgba(223, 232, 225, 0.95);
+  }
+
+  .article-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(36, 85, 72, 0.22) !important;
+    box-shadow: 0 22px 48px rgba(20, 42, 35, 0.11);
+  }
+
+  .article-card:hover .article-cover-line {
+    stroke: rgba(255, 254, 250, 0.72);
+  }
+}
+
+@media (max-width: 620px) {
+  .condition-card-top {
+    margin-bottom: 20px;
+  }
+
+  .condition-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  .article-cover {
+    height: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > *,
+  .hero-panel {
+    animation: none;
+  }
+
+  .condition-icon,
+  .article-card {
+    transition: none;
+  }
+}
