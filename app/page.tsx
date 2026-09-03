@@ -14,10 +14,6 @@ export default function Home() {
             <Link className="button primary" href="/agendamento">Agendar consulta</Link>
             <Link className="button secondary" href="/doencas">Conhecer condições</Link>
           </div>
-          <p className="credential-note">
-            <strong>MÉDICO — CRM-SP 270090.</strong> A apresentação de especialidade e RQE será incluída
-            somente após validação documental, para manter a comunicação profissional precisa.
-          </p>
         </div>
         <div className="hero-panel" aria-label="Apresentação do médico">
           <img
