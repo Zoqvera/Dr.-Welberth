@@ -79,6 +79,15 @@ nav { display: flex; align-items: center; gap: 28px; font-size: .92rem; }
   min-height: 330px; border-radius: 22px; background: #d7ded9; color: #5e6964;
   display: grid; place-items: center; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem;
 }
+.doctor-portrait {
+  width: 100%;
+  height: 330px;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 22px;
+  background: #d7ded9;
+}
 .hero-panel h2 { font-family: Georgia, serif; font-size: 2rem; margin: 8px 0 18px; }
 .hero-panel p { margin: 4px 0; color: #d8e3dd; }
 .panel-kicker { text-transform: uppercase; font-size: .68rem; letter-spacing: .13em; }
