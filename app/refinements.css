@@ -165,9 +165,9 @@
   left: 0;
   margin: 0;
   padding: 8px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(12, 43, 37, 0.84);
-  color: rgba(255, 254, 250, 0.96);
+  border-top: 1px solid rgba(24, 38, 34, 0.18);
+  background: #ffd54a;
+  color: #182622;
   font-size: 0.63rem;
   font-weight: 800;
   letter-spacing: 0.12em;
