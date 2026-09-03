@@ -1,46 +1,9 @@
-const conditions = [
-  "Artrite reumatoide",
-  "Fibromialgia",
-  "Lúpus",
-  "Artrose",
-  "Osteoporose",
-  "Gota",
-];
-
-const articles = [
-  {
-    title: "Rigidez nas articulações pela manhã: quando procurar avaliação médica?",
-    category: "Sintomas",
-  },
-  {
-    title: "Artrite e artrose: quais são as principais diferenças?",
-    category: "Doenças reumáticas",
-  },
-  {
-    title: "Fibromialgia: o que é e como costuma ser investigada?",
-    category: "Fibromialgia",
-  },
-];
+import Link from "next/link";
+import { articles, conditions } from "./content";
 
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Página inicial">
-          <span className="brand-mark">WF</span>
-          <span>
-            <strong>Dr. Welberth Fernandes</strong>
-            <small>Medicina e informação em reumatologia</small>
-          </span>
-        </a>
-        <nav aria-label="Navegação principal">
-          <a href="#sobre">Sobre</a>
-          <a href="#condicoes">Condições</a>
-          <a href="#artigos">Artigos</a>
-          <a className="nav-cta" href="#agendamento">Agendar consulta</a>
-        </nav>
-      </header>
-
       <section className="hero" id="inicio">
         <div className="hero-copy">
           <p className="eyebrow">Cuidado clínico • Informação baseada em evidências</p>
@@ -50,8 +13,8 @@ export default function Home() {
             além de um caminho simples para solicitar uma consulta.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="#agendamento">Agendar consulta</a>
-            <a className="button secondary" href="#condicoes">Conhecer condições</a>
+            <Link className="button primary" href="/agendamento">Agendar consulta</Link>
+            <Link className="button secondary" href="/doencas">Conhecer condições</Link>
           </div>
           <p className="credential-note">
             As credenciais profissionais e o enquadramento da especialidade serão publicados após
@@ -71,21 +34,21 @@ export default function Home() {
       </section>
 
       <section className="section" id="condicoes">
-        <div className="section-heading">
-          <p className="eyebrow">Informação para pacientes</p>
-          <h2>Condições reumatológicas</h2>
-          <p>
-            Cada condição terá uma página própria, com linguagem acessível, referências e conteúdo
-            revisado periodicamente.
-          </p>
+        <div className="section-heading horizontal">
+          <div>
+            <p className="eyebrow">Informação para pacientes</p>
+            <h2>Condições reumatológicas</h2>
+            <p>Cada condição tem uma página própria, pensada para explicar o essencial em linguagem acessível.</p>
+          </div>
+          <Link href="/doencas">Ver todas →</Link>
         </div>
         <div className="card-grid">
           {conditions.map((condition) => (
-            <article className="condition-card" key={condition}>
+            <article className="condition-card" key={condition.slug}>
               <span>Guia</span>
-              <h3>{condition}</h3>
-              <p>Sintomas, diagnóstico, acompanhamento e possibilidades de tratamento.</p>
-              <a href="#artigos">Explorar conteúdo →</a>
+              <h3>{condition.name}</h3>
+              <p>{condition.summary}</p>
+              <Link href={`/doencas/${condition.slug}`}>Explorar conteúdo →</Link>
             </article>
           ))}
         </div>
@@ -98,15 +61,15 @@ export default function Home() {
         </div>
         <div className="about-copy">
           <p>
-            A proposta deste espaço é unir atendimento médico, educação em saúde e conteúdo
-            confiável. A apresentação profissional definitiva será publicada somente após a
-            confirmação dos dados que devem constar na publicidade médica.
+            Este espaço foi concebido para unir atendimento médico, educação em saúde e conteúdo
+            confiável, com transparência sobre formação e credenciais profissionais.
           </p>
           <div className="timeline">
             <div><strong>Unimontes</strong><span>Graduação em Medicina</span></div>
             <div><strong>HC-UFU</strong><span>Residência em Clínica Médica</span></div>
             <div><strong>HC-FMRP-USP</strong><span>Formação em Reumatologia</span></div>
           </div>
+          <p><Link className="text-link" href="/sobre">Conheça a trajetória →</Link></p>
         </div>
       </section>
 
@@ -116,15 +79,15 @@ export default function Home() {
             <p className="eyebrow">Biblioteca</p>
             <h2>Artigos para entender melhor sua saúde.</h2>
           </div>
-          <a href="#" aria-label="Ver todos os artigos">Ver todos →</a>
+          <Link href="/artigos">Ver todos →</Link>
         </div>
         <div className="article-list">
           {articles.map((article) => (
-            <article key={article.title}>
+            <article key={article.slug}>
               <span>{article.category}</span>
               <h3>{article.title}</h3>
-              <p>Leitura educativa. O conteúdo não substitui avaliação médica individual.</p>
-              <a href="#">Ler artigo →</a>
+              <p>{article.excerpt}</p>
+              <Link href={`/artigos/${article.slug}`}>Ler artigo →</Link>
             </article>
           ))}
         </div>
@@ -135,26 +98,12 @@ export default function Home() {
           <p className="eyebrow light">Agendamento</p>
           <h2>Solicite sua consulta.</h2>
           <p>
-            O módulo de agenda será conectado depois à disponibilidade real do médico. Nesta etapa,
-            a interface já está preparada para receber o fluxo de escolha de modalidade, data e horário.
+            O fluxo de agenda será conectado à disponibilidade real do médico. A página já pode receber
+            escolha de modalidade, data, horário e dados básicos do paciente.
           </p>
         </div>
-        <button type="button" disabled>Agenda em configuração</button>
+        <Link className="booking-link" href="/agendamento">Abrir agendamento</Link>
       </section>
-
-      <footer>
-        <div>
-          <strong>Dr. Welberth Fernandes de Souza</strong>
-          <p>Conteúdo médico e informações para pacientes.</p>
-        </div>
-        <div className="footer-links">
-          <a href="#">Política de Privacidade</a>
-          <a href="#">Termos de Uso</a>
-        </div>
-        <p className="footer-legal">
-          Dados profissionais obrigatórios serão incluídos após validação antes da publicação comercial.
-        </p>
-      </footer>
     </main>
   );
 }
