@@ -10,7 +10,7 @@ const siteUrl = "https://zoqvera.github.io/Dr.-Welberth/";
 const siteTitle = "Dr. Welberth Fernandes de Souza";
 const siteDescription =
   "Informação médica em reumatologia, doenças reumáticas e orientações para agendamento de consulta.";
-const openGraphImageUrl = `${siteUrl}open_graph_welberth.png`;
+const openGraphImageUrl = `${siteUrl}open_graph_welberth.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteTitle}`,
   },
   description: siteDescription,
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -29,7 +32,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: openGraphImageUrl,
+        width: 1200,
+        height: 630,
         alt: siteTitle,
+        type: "image/jpeg",
       },
     ],
   },

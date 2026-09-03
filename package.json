@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/prepare-open-graph.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/prepare-open-graph.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -17,6 +19,7 @@
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "sharp": "^0.34.3",
     "typescript": "^5.8.2"
   }
 }
