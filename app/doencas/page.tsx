@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ConditionIcon } from "../components/condition-icon";
 import { conditions } from "../content";
 
 export const metadata: Metadata = {
@@ -22,7 +23,10 @@ export default function DoencasPage() {
         <div className="card-grid">
           {conditions.map((condition) => (
             <article className="condition-card" key={condition.slug}>
-              <span>Guia</span>
+              <div className="condition-card-top">
+                <ConditionIcon slug={condition.slug} />
+                <span>Guia</span>
+              </div>
               <h2>{condition.name}</h2>
               <p>{condition.summary}</p>
               <Link href={`/doencas/${condition.slug}`}>Abrir guia →</Link>
