@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArticleCover } from "./components/article-cover";
 import { ConditionIcon } from "./components/condition-icon";
 import { articles, conditions } from "./content";
+import { doctorProfile } from "./site-config";
 
 export default function Home() {
   return (
@@ -19,27 +20,20 @@ export default function Home() {
           <figure className="doctor-portrait-frame">
             <img
               className="doctor-portrait"
-              src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth_2.png"
-              alt="Dr. Welberth Fernandes de Souza"
+              src={doctorProfile.portraitUrl}
+              alt={doctorProfile.displayName}
             />
-            <figcaption
-              className="ai-image-label"
-              style={{
-                background: "#ffd54a",
-                borderTopColor: "rgba(24, 38, 34, 0.18)",
-                color: "#182622",
-              }}
-            >
+            <figcaption className="ai-image-label">
               Imagem provisória gerada por IA
             </figcaption>
           </figure>
           <div>
             <p className="panel-kicker">Trajetória médica</p>
-            <h2>Welberth Fernandes de Souza</h2>
-            <p>MÉDICO — CRM-SP 270090</p>
-            <p>Medicina — Unimontes</p>
-            <p>Clínica Médica — HC-UFU</p>
-            <p>Formação em Reumatologia — HC-FMRP-USP</p>
+            <h2>{doctorProfile.name}</h2>
+            <p>{doctorProfile.professionalId}</p>
+            {doctorProfile.training.map((training) => (
+              <p key={training.shortInstitution}>{training.heroLabel}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -79,9 +73,12 @@ export default function Home() {
             confiável, com transparência sobre formação e credenciais profissionais.
           </p>
           <div className="timeline">
-            <div><strong>Unimontes</strong><span>Graduação em Medicina</span></div>
-            <div><strong>HC-UFU</strong><span>Residência em Clínica Médica</span></div>
-            <div><strong>HC-FMRP-USP</strong><span>Formação em Reumatologia</span></div>
+            {doctorProfile.training.map((training) => (
+              <div key={training.shortInstitution}>
+                <strong>{training.shortInstitution}</strong>
+                <span>{training.program}</span>
+              </div>
+            ))}
           </div>
           <p><Link className="text-link" href="/sobre">Conheça a trajetória →</Link></p>
         </div>
