@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ConditionIcon } from "../components/condition-icon";
+import { ConditionCard } from "../components/condition-card";
 import { conditions } from "../content";
 
 export const metadata: Metadata = {
@@ -22,15 +21,12 @@ export default function DoencasPage() {
       <section className="section flush-top">
         <div className="card-grid">
           {conditions.map((condition) => (
-            <article className="condition-card" key={condition.slug}>
-              <div className="condition-card-top">
-                <ConditionIcon slug={condition.slug} />
-                <span>Guia</span>
-              </div>
-              <h2>{condition.name}</h2>
-              <p>{condition.summary}</p>
-              <Link href={`/doencas/${condition.slug}`}>Abrir guia →</Link>
-            </article>
+            <ConditionCard
+              condition={condition}
+              headingLevel={2}
+              key={condition.slug}
+              linkLabel="Abrir guia →"
+            />
           ))}
         </div>
       </section>
