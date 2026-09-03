@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ArticleCover } from "./components/article-cover";
+import { ConditionIcon } from "./components/condition-icon";
 import { articles, conditions } from "./content";
 
 export default function Home() {
@@ -50,7 +52,10 @@ export default function Home() {
         <div className="card-grid">
           {conditions.map((condition) => (
             <article className="condition-card" key={condition.slug}>
-              <span>Guia</span>
+              <div className="condition-card-top">
+                <ConditionIcon slug={condition.slug} />
+                <span>Guia</span>
+              </div>
               <h3>{condition.name}</h3>
               <p>{condition.summary}</p>
               <Link href={`/doencas/${condition.slug}`}>Explorar conteúdo →</Link>
@@ -88,11 +93,14 @@ export default function Home() {
         </div>
         <div className="article-list">
           {articles.map((article) => (
-            <article key={article.slug}>
-              <span>{article.category}</span>
-              <h3>{article.title}</h3>
-              <p>{article.excerpt}</p>
-              <Link href={`/artigos/${article.slug}`}>Ler artigo →</Link>
+            <article className="article-card" key={article.slug}>
+              <ArticleCover category={article.category} slug={article.slug} />
+              <div className="article-card-copy">
+                <span>{article.category}</span>
+                <h3>{article.title}</h3>
+                <p>{article.excerpt}</p>
+                <Link href={`/artigos/${article.slug}`}>Ler artigo →</Link>
+              </div>
             </article>
           ))}
         </div>
