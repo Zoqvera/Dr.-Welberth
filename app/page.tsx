@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArticleCover } from "./components/article-cover";
-import { ConditionIcon } from "./components/condition-icon";
+import { ArticleCard } from "./components/article-card";
+import { ConditionCard } from "./components/condition-card";
 import { articles, conditions } from "./content";
+import { doctorProfile } from "./site-config";
 
 export default function Home() {
   return (
@@ -19,27 +20,20 @@ export default function Home() {
           <figure className="doctor-portrait-frame">
             <img
               className="doctor-portrait"
-              src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth_2.png"
-              alt="Dr. Welberth Fernandes de Souza"
+              src={doctorProfile.portraitUrl}
+              alt={doctorProfile.displayName}
             />
-            <figcaption
-              className="ai-image-label"
-              style={{
-                background: "#ffd54a",
-                borderTopColor: "rgba(24, 38, 34, 0.18)",
-                color: "#182622",
-              }}
-            >
+            <figcaption className="ai-image-label">
               Imagem provisória gerada por IA
             </figcaption>
           </figure>
           <div>
             <p className="panel-kicker">Trajetória médica</p>
-            <h2>Welberth Fernandes de Souza</h2>
-            <p>MÉDICO — CRM-SP 270090</p>
-            <p>Medicina — Unimontes</p>
-            <p>Clínica Médica — HC-UFU</p>
-            <p>Formação em Reumatologia — HC-FMRP-USP</p>
+            <h2>{doctorProfile.name}</h2>
+            <p>{doctorProfile.professionalId}</p>
+            {doctorProfile.training.map((training) => (
+              <p key={training.shortInstitution}>{training.heroLabel}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -55,15 +49,12 @@ export default function Home() {
         </div>
         <div className="card-grid">
           {conditions.map((condition) => (
-            <article className="condition-card" key={condition.slug}>
-              <div className="condition-card-top">
-                <ConditionIcon slug={condition.slug} />
-                <span>Guia</span>
-              </div>
-              <h3>{condition.name}</h3>
-              <p>{condition.summary}</p>
-              <Link href={`/doencas/${condition.slug}`}>Explorar conteúdo →</Link>
-            </article>
+            <ConditionCard
+              condition={condition}
+              headingLevel={3}
+              key={condition.slug}
+              linkLabel="Explorar conteúdo →"
+            />
           ))}
         </div>
       </section>
@@ -79,9 +70,12 @@ export default function Home() {
             confiável, com transparência sobre formação e credenciais profissionais.
           </p>
           <div className="timeline">
-            <div><strong>Unimontes</strong><span>Graduação em Medicina</span></div>
-            <div><strong>HC-UFU</strong><span>Residência em Clínica Médica</span></div>
-            <div><strong>HC-FMRP-USP</strong><span>Formação em Reumatologia</span></div>
+            {doctorProfile.training.map((training) => (
+              <div key={training.shortInstitution}>
+                <strong>{training.shortInstitution}</strong>
+                <span>{training.summaryLabel}</span>
+              </div>
+            ))}
           </div>
           <p><Link className="text-link" href="/sobre">Conheça a trajetória →</Link></p>
         </div>
@@ -97,15 +91,7 @@ export default function Home() {
         </div>
         <div className="article-list">
           {articles.map((article) => (
-            <article className="article-card" key={article.slug}>
-              <ArticleCover category={article.category} slug={article.slug} />
-              <div className="article-card-copy">
-                <span>{article.category}</span>
-                <h3>{article.title}</h3>
-                <p>{article.excerpt}</p>
-                <Link href={`/artigos/${article.slug}`}>Ler artigo →</Link>
-              </div>
-            </article>
+            <ArticleCard article={article} headingLevel={3} key={article.slug} />
           ))}
         </div>
       </section>
