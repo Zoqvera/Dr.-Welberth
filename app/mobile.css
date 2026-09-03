@@ -1,0 +1,377 @@
+.nav-cta-mobile {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  body {
+    background:
+      radial-gradient(circle at 12% 2%, rgba(142, 166, 153, 0.12), transparent 19rem),
+      linear-gradient(180deg, #f6f3ec 0, var(--bg) 32rem);
+  }
+
+  .site-header {
+    top: 6px;
+    width: calc(100% - 16px);
+    min-height: 62px;
+    margin-top: 6px;
+    padding: 8px 8px 8px 14px;
+    gap: 10px;
+    border-radius: 17px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .brand strong {
+    max-width: none;
+    overflow: hidden;
+    color: var(--accent-deep);
+    font-size: 0.91rem;
+    letter-spacing: -0.025em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  nav {
+    flex: 0 0 auto;
+  }
+
+  .nav-cta {
+    min-height: 42px;
+    margin-left: 0;
+    padding: 9px 14px;
+    font-size: 0.78rem;
+  }
+
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .nav-cta-mobile {
+    display: inline;
+  }
+
+  .hero,
+  .section,
+  .split,
+  .booking,
+  footer {
+    width: calc(100% - 28px);
+  }
+
+  .hero {
+    min-height: auto;
+    margin: 32px auto 54px;
+    gap: 24px;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .eyebrow {
+    gap: 8px;
+    font-size: 0.64rem;
+    letter-spacing: 0.145em;
+  }
+
+  .eyebrow::before {
+    width: 22px;
+  }
+
+  .hero h1 {
+    margin: 15px 0 20px;
+    font-size: clamp(2.72rem, 13vw, 3.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-text {
+    max-width: none;
+    font-size: 0.98rem;
+    line-height: 1.67;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin: 26px 0 18px;
+  }
+
+  .button {
+    min-height: 50px;
+    padding: 13px 18px;
+    font-size: 0.88rem;
+  }
+
+  .credential-note {
+    max-width: none;
+    padding: 13px 14px;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.73rem;
+    line-height: 1.52;
+  }
+
+  .hero-panel {
+    width: 100%;
+    min-height: auto;
+    border-radius: 24px;
+  }
+
+  .doctor-portrait {
+    height: min(78vw, 300px);
+    object-position: center 12%;
+  }
+
+  .hero-panel > div {
+    padding: 21px 20px 24px;
+  }
+
+  .hero-panel h2 {
+    margin: 7px 0 14px;
+    font-size: 1.82rem;
+  }
+
+  .hero-panel p {
+    margin: 4px 0;
+    font-size: 0.81rem;
+    line-height: 1.48;
+  }
+
+  .hero-panel::after {
+    right: -8px;
+    bottom: -25px;
+    font-size: 6.5rem;
+  }
+
+  .section {
+    padding: 54px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section h2 {
+    margin-top: 9px;
+    font-size: clamp(2.2rem, 11vw, 3.05rem);
+    line-height: 1.01;
+  }
+
+  .section-heading > p:last-child,
+  .about-copy > p {
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .horizontal {
+    gap: 14px;
+  }
+
+  .horizontal > a {
+    padding-bottom: 5px;
+    font-size: 0.8rem;
+  }
+
+  .card-grid,
+  .article-list {
+    gap: 14px;
+  }
+
+  .condition-card {
+    min-height: 0;
+    padding: 21px;
+    border-radius: 22px;
+  }
+
+  .condition-card::before {
+    right: 18px;
+    top: 16px;
+    font-size: 0.88rem;
+  }
+
+  .condition-card::after {
+    right: -58px;
+    bottom: -66px;
+    width: 138px;
+    height: 138px;
+  }
+
+  .condition-card-top {
+    margin-bottom: 16px;
+  }
+
+  .condition-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+  }
+
+  .condition-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .condition-card h3,
+  .condition-card h2 {
+    max-width: 88%;
+    margin: 14px 0 9px;
+    font-size: 1.48rem;
+    line-height: 1.12;
+  }
+
+  .condition-card p {
+    max-width: 92%;
+    margin: 0 0 17px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .condition-card a,
+  .article-list a {
+    font-size: 0.8rem;
+  }
+
+  .split {
+    margin: 8px auto 44px;
+    padding: 31px 20px;
+    gap: 29px;
+    border-radius: 24px;
+  }
+
+  .split h2 {
+    max-width: 320px;
+    font-size: clamp(2.28rem, 11vw, 3rem);
+  }
+
+  .timeline {
+    margin-top: 22px;
+  }
+
+  .timeline div {
+    padding: 16px 0;
+  }
+
+  .timeline strong {
+    font-size: 1rem;
+  }
+
+  .timeline span {
+    font-size: 0.82rem;
+  }
+
+  .article-card {
+    min-height: 0 !important;
+    border-radius: 21px;
+  }
+
+  .article-cover {
+    height: 142px;
+  }
+
+  .article-cover-label {
+    top: 15px;
+    left: 15px;
+    font-size: 0.58rem;
+  }
+
+  .article-cover-mark {
+    right: 16px;
+    bottom: 10px;
+    font-size: 2.6rem;
+  }
+
+  .article-card-copy {
+    padding: 20px 20px 23px;
+  }
+
+  .article-list h3,
+  .article-list h2 {
+    margin: 13px 0 10px;
+    font-size: 1.42rem;
+  }
+
+  .article-list p {
+    margin-bottom: 17px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .booking {
+    margin: 34px auto 50px;
+    padding: 31px 20px;
+    gap: 25px;
+    border-radius: 24px;
+  }
+
+  .booking h2 {
+    margin: 9px 0 16px;
+    font-size: clamp(2.55rem, 12vw, 3.35rem);
+    line-height: 0.99;
+  }
+
+  .booking p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .booking-link {
+    min-height: 52px;
+    font-size: 0.87rem;
+  }
+
+  footer {
+    padding: 34px 0 44px;
+    gap: 18px;
+  }
+
+  footer strong {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    gap: 5px;
+  }
+
+  .footer-legal {
+    padding-top: 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-header {
+    width: calc(100% - 12px);
+    padding-left: 11px;
+  }
+
+  .brand strong {
+    font-size: 0.82rem;
+  }
+
+  .nav-cta {
+    min-height: 40px;
+    padding: 8px 11px;
+    font-size: 0.74rem;
+  }
+
+  .hero,
+  .section,
+  .split,
+  .booking,
+  footer {
+    width: calc(100% - 24px);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 13.2vw, 3.1rem);
+  }
+
+  .doctor-portrait {
+    height: 270px;
+  }
+
+  .section h2 {
+    font-size: 2.28rem;
+  }
+}
