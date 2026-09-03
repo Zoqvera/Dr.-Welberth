@@ -135,6 +135,8 @@ footer {
 footer strong { color: var(--text); }
 .footer-links { display: flex; gap: 20px; }
 .footer-legal { grid-column: 1 / -1; font-size: .78rem; }
+.footer-credit { grid-column: 1 / -1; margin: 0; font-size: .82rem; }
+.footer-credit a { color: var(--accent); font-weight: 700; }
 
 @media (max-width: 900px) {
   nav a:not(.nav-cta) { display: none; }
