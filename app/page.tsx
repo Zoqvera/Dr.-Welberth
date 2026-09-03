@@ -16,11 +16,14 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-panel" aria-label="Apresentação do médico">
-          <img
-            className="doctor-portrait"
-            src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth_2.png"
-            alt="Dr. Welberth Fernandes de Souza"
-          />
+          <figure className="doctor-portrait-frame">
+            <img
+              className="doctor-portrait"
+              src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth_2.png"
+              alt="Dr. Welberth Fernandes de Souza"
+            />
+            <figcaption className="ai-image-label">Imagem provisória gerada por IA</figcaption>
+          </figure>
           <div>
             <p className="panel-kicker">Trajetória médica</p>
             <h2>Welberth Fernandes de Souza</h2>
