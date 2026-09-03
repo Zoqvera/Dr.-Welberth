@@ -14,6 +14,9 @@ export function SiteFooter() {
       <p className="footer-legal">
         Conteúdo educativo. Informações profissionais obrigatórias serão publicadas após validação documental antes do lançamento comercial.
       </p>
+      <p className="footer-credit">
+        Desenvolvido por <a href="https://zoqvera.com">Zoqvera</a>
+      </p>
     </footer>
   );
 }
