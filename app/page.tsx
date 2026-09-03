@@ -22,7 +22,16 @@ export default function Home() {
               src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth_2.png"
               alt="Dr. Welberth Fernandes de Souza"
             />
-            <figcaption className="ai-image-label">Imagem provisória gerada por IA</figcaption>
+            <figcaption
+              className="ai-image-label"
+              style={{
+                background: "#ffd54a",
+                borderTopColor: "rgba(24, 38, 34, 0.18)",
+                color: "#182622",
+              }}
+            >
+              Imagem provisória gerada por IA
+            </figcaption>
           </figure>
           <div>
             <p className="panel-kicker">Trajetória médica</p>
