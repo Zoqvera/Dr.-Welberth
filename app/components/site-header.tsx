@@ -7,7 +7,7 @@ export function SiteHeader() {
         <span className="brand-mark">WF</span>
         <span>
           <strong>Dr. Welberth Fernandes</strong>
-          <small>Medicina e informação em reumatologia</small>
+          <small>MÉDICO — CRM-SP 270090</small>
         </span>
       </Link>
       <nav aria-label="Navegação principal">
