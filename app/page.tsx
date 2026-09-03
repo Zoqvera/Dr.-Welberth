@@ -10,10 +10,6 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">Cuidado clínico • Informação baseada em evidências</p>
           <h1>Compreender a doença é parte do cuidado.</h1>
-          <p className="hero-text">
-            Conteúdo médico claro sobre doenças reumáticas, sintomas, investigação e tratamento,
-            além de um caminho simples para solicitar uma consulta.
-          </p>
           <div className="hero-actions">
             <Link className="button primary" href="/agendamento">Agendar consulta</Link>
             <Link className="button secondary" href="/doencas">Conhecer condições</Link>
