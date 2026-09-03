@@ -5,6 +5,7 @@ export function SiteFooter() {
     <footer>
       <div>
         <strong>Dr. Welberth Fernandes de Souza</strong>
+        <p>MÉDICO — CRM-SP 270090</p>
         <p>Conteúdo médico e informações para pacientes.</p>
       </div>
       <div className="footer-links">
@@ -12,7 +13,7 @@ export function SiteFooter() {
         <Link href="/termos">Termos de Uso</Link>
       </div>
       <p className="footer-legal">
-        Conteúdo educativo. Informações profissionais obrigatórias serão publicadas após validação documental antes do lançamento comercial.
+        Conteúdo educativo. A apresentação de especialidade e RQE será incluída somente após validação documental.
       </p>
       <p className="footer-credit">
         Desenvolvido por <a href="https://zoqvera.com">Zoqvera</a>
