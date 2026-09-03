@@ -4,6 +4,7 @@ import { SiteHeader } from "./components/site-header";
 import "./globals.css";
 import "./pages.css";
 import "./refinements.css";
+import "./mobile.css";
 
 export const metadata: Metadata = {
   title: {
