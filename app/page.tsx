@@ -22,7 +22,11 @@ export default function Home() {
           </p>
         </div>
         <div className="hero-panel" aria-label="Apresentação do médico">
-          <div className="portrait-placeholder">Foto profissional</div>
+          <img
+            className="doctor-portrait"
+            src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth.png"
+            alt="Dr. Welberth Fernandes de Souza"
+          />
           <div>
             <p className="panel-kicker">Trajetória médica</p>
             <h2>Welberth Fernandes de Souza</h2>
