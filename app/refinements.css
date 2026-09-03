@@ -129,6 +129,28 @@
   transform: translate(-76px, -34px) scale(.75);
 }
 
+.article-page-cover {
+  margin-top: 34px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.article-page-cover .article-cover {
+  height: clamp(220px, 34vw, 360px);
+}
+
+.article-page-cover .article-cover-mark {
+  right: 28px;
+  bottom: 20px;
+  font-size: clamp(4rem, 8vw, 6.5rem);
+}
+
+.article-page-cover .article-cover-label {
+  top: 28px;
+  left: 28px;
+}
+
 .hero-copy > *,
 .hero-panel {
   animation: refined-rise 720ms cubic-bezier(.2,.8,.2,1) both;
@@ -181,6 +203,11 @@
 
   .article-cover {
     height: 160px;
+  }
+
+  .article-page-cover {
+    margin-top: 26px;
+    border-radius: 22px;
   }
 }
 
