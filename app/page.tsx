@@ -24,7 +24,7 @@ export default function Home() {
         <div className="hero-panel" aria-label="Apresentação do médico">
           <img
             className="doctor-portrait"
-            src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth.png"
+            src="https://raw.githubusercontent.com/Zoqvera/Dr.-Welberth/main/dr.welberth_2.png"
             alt="Dr. Welberth Fernandes de Souza"
           />
           <div>
