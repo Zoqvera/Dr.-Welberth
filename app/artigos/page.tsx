@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArticleCover } from "../components/article-cover";
+import { ArticleCard } from "../components/article-card";
 import { articles } from "../content";
 
 export const metadata: Metadata = {
@@ -22,15 +21,7 @@ export default function ArtigosPage() {
       <section className="section flush-top">
         <div className="article-list">
           {articles.map((article) => (
-            <article className="article-card" key={article.slug}>
-              <ArticleCover category={article.category} slug={article.slug} />
-              <div className="article-card-copy">
-                <span>{article.category}</span>
-                <h2>{article.title}</h2>
-                <p>{article.excerpt}</p>
-                <Link href={`/artigos/${article.slug}`}>Ler artigo →</Link>
-              </div>
-            </article>
+            <ArticleCard article={article} headingLevel={2} key={article.slug} />
           ))}
         </div>
       </section>
