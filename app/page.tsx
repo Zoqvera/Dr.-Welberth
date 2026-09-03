@@ -76,7 +76,7 @@ export default function Home() {
             {doctorProfile.training.map((training) => (
               <div key={training.shortInstitution}>
                 <strong>{training.shortInstitution}</strong>
-                <span>{training.program}</span>
+                <span>{training.summaryLabel}</span>
               </div>
             ))}
           </div>
